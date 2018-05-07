@@ -1,0 +1,10 @@
+version: '2'
+services:
+  backend:
+    build: ./backend
+    expose:
+      - "8080"
+  sensor:
+    build: ./sensor
+    depends_on:
+      - backend

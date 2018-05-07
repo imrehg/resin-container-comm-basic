@@ -1,0 +1,10 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-node
+
+WORKDIR /usr/src/app
+
+COPY package.json ./
+RUN npm install --only=production 
+
+COPY . ./
+
+CMD ["node", "app.js"]
